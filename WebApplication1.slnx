@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MediatorLib1/MediatorLib1.csproj" />
+  <Project Path="WebApplication1/WebApplication1.csproj" />
+</Solution>
