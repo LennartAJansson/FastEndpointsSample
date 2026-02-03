@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>webextensionclass</Title>
+			<Shortcut>webextcla</Shortcut>
+			<Description>Code snippet for web extension class</Description>
+			<Author>Lennart</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>extensionName</ID>
+					<ToolTip>Extension name</ToolTip>
+					<Default>MyExtension</Default>
+				</Literal>
+			</Declarations>
+
+			<Code Language="csharp"><![CDATA[
+
+//If this extension is going to be used in a Class Library containing ASP.NET parts then...
+//Add a frameworkreference in your csproj like this:          
+//<ItemGroup>
+  //<FrameworkReference Include="Microsoft.AspNetCore.App" />
+//</ItemGroup>
+//using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.Hosting;
+
+public static class $extensionName$Extensions
+{
+  extension(WebApplicationBuilder builder)
+  {
+    public WebApplicationBuilder Add$extensionName$()
+    {
+      return builder;
+    }
+  }
+
+  extension (IServiceCollection services)
+  {
+    public IServiceCollection Add$extensionName$()
+    {
+      return services;
+    }
+  }
+
+  extension(WebApplication app)
+  {
+    public WebApplication Use$extensionName$()
+    {
+      return app;
+    }
+  }
+}
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>hostextensionclass</Title>
+			<Shortcut>hostextcla</Shortcut>
+			<Description>Code snippet for host extension class</Description>
+			<Author>Lennart</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>extensionName</ID>
+					<ToolTip>Extension name</ToolTip>
+					<Default>MyExtension</Default>
+				</Literal>
+			</Declarations>
+
+			<Code Language="csharp"><![CDATA[
+
+public static class $extensionName$Extensions
+{
+  extension(IHostBuilder builder)
+  {
+    public WebApplicationBuilder Add$extensionName$()
+    {
+      return builder;
+    }
+  }
+
+  extension (IServiceCollection services)
+  {
+    public IServiceCollection Add$extensionName$()
+    {
+      return services;
+    }
+  }
+
+  extension(IHost host)
+  {
+    public IHost Use$extensionName$()
+    {
+      return host;
+    }
+  }
+}
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
